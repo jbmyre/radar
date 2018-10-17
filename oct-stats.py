@@ -7,22 +7,12 @@ games_2017 = schedule_2017.json().get("games")
 
 magic_id = "583ed157-fb46-11e1-82cb-f4ce4684ea4c"
 pistons_id = "583ec928-fb46-11e1-82cb-f4ce4684ea4c"
-
 heat_id = "583ecea6-fb46-11e1-82cb-f4ce4684ea4c"
 spurs_id = "583ecd4f-fb46-11e1-82cb-f4ce4684ea4c"
-
 kings_id ="583ed0ac-fb46-11e1-82cb-f4ce4684ea4c"
 raptors_id = "583ecda6-fb46-11e1-82cb-f4ce4684ea4c"
-
 lakers_id = "583ecae2-fb46-11e1-82cb-f4ce4684ea4c"
 timberwolves_id = "583eca2f-fb46-11e1-82cb-f4ce4684ea4c"
-
-
-def roster_url(team):
-    head = "https://api.sportradar.us/nba/trial/v5/en/teams/"
-    tail = "/profile.json?api_key=dek9px59ega4h4vv3hjuw59p"
-    url = head + team + tail
-    return url
 
 
 def game_summary_url(game_id):
@@ -32,10 +22,10 @@ def game_summary_url(game_id):
     return url
 
 
-def oct_games(team, games_2017 = games_2017):
+def oct_games(team, games_oct = games_2017):
     games = []
-    for g in games_2017:
-        game_id = g.get("id")
+    for g in games_oct:
+        game_id = g.get("id")  # type: string
         date = g.get("scheduled")
         oct_date = date.split("T")[0]
         d = oct_date[:-3]
@@ -61,3 +51,18 @@ kings_games = oct_games(kings_id)
 raptors_games = oct_games(raptors_id)
 
 
+def game_stats(games, team_id ):
+
+    for g in games:
+        game = requests.get(game_summary_url(g))
+        home = game.json().get("home")
+        away = game.json().get("away")
+        home_id = home.get("id")
+        away_id = away.get("id")
+        if home_id == team_id:
+            players = home.get("players")
+        elif away_id == team_id:
+            players = away.get("players")
+        print players
+
+game_stats(lakers_games, lakers_id)
