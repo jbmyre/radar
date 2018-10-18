@@ -43,16 +43,25 @@ def oct_games(team, games_oct = games_2017):
 
 lakers_games = oct_games(lakers_id)
 timberwolves_games = oct_games(timberwolves_id)
-magic_games = oct_games(magic_id,games_2017)
+magic_games = oct_games(magic_id)
 pistons_games = oct_games(pistons_id)
 heat_games = oct_games(heat_id)
 spurs_games = oct_games(spurs_id)
 kings_games = oct_games(kings_id)
 raptors_games = oct_games(raptors_id)
 
+lakers_game_ct = lakers_games.__len__()
+timberwolves_game_ct = timberwolves_games.__len__()
+magic_game_ct = magic_games.__len__()
+pistons_game_ct = pistons_games.__len__()
+heat_game_ct= heat_games.__len__()
+spurs_game_ct = spurs_games.__len__()
+kings_game_ct = kings_games.__len__()
+raptors_game_ct = raptors_games.__len__()
+
 
 def game_stats(games, team_id ):
-
+    roster = []
     for g in games:
         game = requests.get(game_summary_url(g))
         home = game.json().get("home")
@@ -61,8 +70,11 @@ def game_stats(games, team_id ):
         away_id = away.get("id")
         if home_id == team_id:
             players = home.get("players")
-        elif away_id == team_id:
+        if away_id == team_id:
             players = away.get("players")
-        print players
+        roster.append(players)
+    return roster
 
 game_stats(lakers_games, lakers_id)
+
+#cool
