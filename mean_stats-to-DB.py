@@ -32,7 +32,7 @@ def get_all_players_games(p_id):
     adv.points = reduce(lambda x, y: x + y, points) / len(points)
     adv.rebounds = reduce(lambda x, y: x + y, rebounds) / len(rebounds)
     adv.assists = reduce(lambda x, y: x + y, assists) / len(assists)
-    adv.fg_percent = reduce(lambda x, y: x + y, fg_percent) / float(len(fg_percent))
+    adv.fg_percent = reduce(lambda x, y: x + y, fg_percent) / len(fg_percent)
     session.add(adv)
     session.flush()
     session.commit()
