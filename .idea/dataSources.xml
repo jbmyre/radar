@@ -10,11 +10,11 @@
         <property name="enable_load_extension" value="true" />
       </driver-properties>
     </data-source>
-    <data-source source="LOCAL" name="teams--.db" uuid="aaea55a9-6358-41f2-95d6-778ba92e9859">
+    <data-source source="LOCAL" name="orig-stats.db" uuid="5fb46df3-f4d4-4856-8c52-d78ee5bbae2f">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\cbssneng\Desktop\radar\teams--.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/orig-stats.db</jdbc-url>
       <driver-properties>
         <property name="enable_load_extension" value="true" />
       </driver-properties>

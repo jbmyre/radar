@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5e58f3d-b1d4-479d-80c3-747e23f3fa01" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="b5e58f3d-b1d4-479d-80c3-747e23f3fa01" name="Default" comment="rename october file for clairity">
+      <change afterPath="$PROJECT_DIR$/mean_stats-to-DB.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oct-stats.py" beforeDir="false" afterPath="$PROJECT_DIR$/oct-stats.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/object.py" beforeDir="false" afterPath="$PROJECT_DIR$/object.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/october_2017-stats-to-stats_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/october_2017-stats-to-stats_db.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stats.db" beforeDir="false" afterPath="$PROJECT_DIR$/stats.db" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,7 +18,8 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/radar$object_test.coverage" NAME="object_test Coverage Results" MODIFIED="1539883672919" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/radar$object.coverage" NAME="object Coverage Results" MODIFIED="1539889916458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/radar$object.coverage" NAME="object Coverage Results" MODIFIED="1539893174014" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/radar$mean_stats_to_DB.coverage" NAME="mean_stats-to-DB Coverage Results" MODIFIED="1539899692161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/radar$engine.coverage" NAME="engine Coverage Results" MODIFIED="1539881826716" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/radar$oct_stats.coverage" NAME="oct-stats Coverage Results" MODIFIED="1539890706963" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -53,7 +55,14 @@
         <item name="stats.db" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="90513b60:SqliteImplModel$Schema" />
-        <item name="team: table" type="ffe0bd85:SqliteImplModel$Table" />
+        <item name="player: table" type="ffe0bd85:SqliteImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="stats.db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="90513b60:SqliteImplModel$Schema" />
+        <item name="player_average: table" type="ffe0bd85:SqliteImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -63,8 +72,8 @@
       <file leaf-file-name="model.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="28" column="8" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+            <state relative-caret-position="495">
+              <caret line="34" column="75" selection-start-line="34" selection-start-column="75" selection-end-line="34" selection-end-column="75" />
             </state>
           </provider>
         </entry>
@@ -72,8 +81,8 @@
       <file leaf-file-name="object.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/object.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="68" lean-forward="true" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="68" />
+            <state relative-caret-position="210">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -81,30 +90,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="oct-stats.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/oct-stats.py">
+      <file leaf-file-name="october_2017-stats-to-stats_db.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/october_2017-stats-to-stats_db.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="97" column="45" lean-forward="true" selection-start-line="97" selection-start-column="45" selection-end-line="97" selection-end-column="45" />
+            <state relative-caret-position="430">
+              <caret line="103" column="20" selection-start-line="102" selection-start-column="8" selection-end-line="104" selection-end-column="24" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#1#16#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a9459190-6472-4988-80d9-033e8dea6577/console.sql">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="mean_stats-to-DB.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mean_stats-to-DB.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/aaea55a9-6358-41f2-95d6-778ba92e9859/console.sql">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="team" pinned="false" current-in-tab="false">
-        <entry file="das://a9459190-6472-4988-80d9-033e8dea6577/schema/main/table/team">
+      <file leaf-file-name="player_average" pinned="false" current-in-tab="true">
+        <entry file="das://a9459190-6472-4988-80d9-033e8dea6577/schema/main/table/player_average">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true" />
@@ -112,7 +123,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="player" pinned="false" current-in-tab="true">
+      <file leaf-file-name="player" pinned="false" current-in-tab="false">
         <entry file="das://a9459190-6472-4988-80d9-033e8dea6577/schema/main/table/player">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
@@ -130,15 +141,22 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>page</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/object.py" />
-        <option value="$PROJECT_DIR$/model.py" />
         <option value="$PROJECT_DIR$/oct-stats.py" />
+        <option value="$PROJECT_DIR$/model.py" />
+        <option value="$PROJECT_DIR$/october_2017-stats-to-stats_db.py" />
+        <option value="$PROJECT_DIR$/object.py" />
+        <option value="$PROJECT_DIR$/mean_stats-to-DB.py" />
       </list>
     </option>
   </component>
@@ -180,6 +198,11 @@
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Sqlite (Xerial)" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\cbssneng\Desktop\radar" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -192,7 +215,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.oct-stats">
+  <component name="RunManager" selected="Python.mean_stats-to-DB">
     <configuration name="engine" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="radar" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -207,6 +230,25 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="C:\Users\cbssneng\Desktop\radar\model.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="mean_stats-to-DB" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="radar" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mean_stats-to-DB.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -263,7 +305,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/oct-stats.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\cbssneng\Desktop\radar\october_2017-stats-to-stats_db.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -274,11 +316,13 @@
       <item itemvalue="Python.engine" />
       <item itemvalue="Python.object_test" />
       <item itemvalue="Python.object" />
+      <item itemvalue="Python.mean_stats-to-DB" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.oct-stats" />
+        <item itemvalue="Python.mean_stats-to-DB" />
         <item itemvalue="Python.object" />
+        <item itemvalue="Python.oct-stats" />
         <item itemvalue="Python.object_test" />
         <item itemvalue="Python.engine" />
       </list>
@@ -309,7 +353,28 @@
       <option name="project" value="LOCAL" />
       <updated>1539885995817</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="STATS DB FULL!!!!">
+      <created>1539890814023</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1539890814023</updated>
+    </task>
+    <task id="LOCAL-00004" summary="rename october file for clairity">
+      <created>1539892695658</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1539892695658</updated>
+    </task>
+    <task id="LOCAL-00005" summary="rename db&#10;&#10;added adverage table">
+      <created>1539893417176</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1539893417176</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -317,17 +382,17 @@
     <layout>
       <window_info anchor="bottom" id="TODO" order="14" />
       <window_info anchor="bottom" id="TagMyCode" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.50053304" side_tool="true" weight="0.23068893" />
       <window_info anchor="bottom" id="Database Changes" order="2" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="10" visible="true" weight="0.11064718" />
+      <window_info anchor="bottom" id="Run" order="10" sideWeight="0.49946696" weight="0.3705637" />
       <window_info anchor="bottom" id="Version Control" order="4" weight="0.21294363" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Terminal" order="6" />
       <window_info anchor="right" id="Remote Host" order="2" />
-      <window_info anchor="bottom" id="Database Console" order="0" weight="0.32985386" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.10554371" />
+      <window_info active="true" anchor="bottom" id="Database Console" order="0" visible="true" weight="0.32985386" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.15405117" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="0" visible="true" weight="0.1108742" />
+      <window_info anchor="right" id="Database" order="0" visible="true" weight="0.26226014" />
       <window_info anchor="right" id="SciView" order="1" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="11" weight="0.4" />
@@ -343,10 +408,10 @@
     <layout-to-restore>
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.32985386" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="10" visible="true" weight="0.4321503" />
+      <window_info anchor="bottom" id="Run" order="10" sideWeight="0.49946696" visible="true" weight="0.23068893" />
       <window_info anchor="right" id="Ant Build" order="4" weight="0.25" />
       <window_info anchor="right" id="Remote Host" order="2" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.10554371" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15405117" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="5" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="14" />
@@ -357,9 +422,9 @@
       <window_info anchor="bottom" id="Cvs" order="12" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="8" />
       <window_info anchor="bottom" id="Debug" order="11" weight="0.4" />
-      <window_info anchor="right" id="Database" order="0" visible="true" weight="0.18710022" />
+      <window_info anchor="right" id="Database" order="0" visible="true" weight="0.1108742" />
       <window_info anchor="bottom" id="Terminal" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.50053304" side_tool="true" visible="true" weight="0.23068893" />
       <window_info anchor="bottom" id="Inspection" order="13" weight="0.4" />
       <window_info anchor="right" id="SciView" order="1" />
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -376,7 +441,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="more!" />
     <MESSAGE value="Added sqlalchemy" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added sqlalchemy" />
+    <MESSAGE value="STATS DB FULL!!!!" />
+    <MESSAGE value="rename october file for clairity" />
+    <MESSAGE value="rename db&#10;&#10;added adverage table" />
+    <option name="LAST_COMMIT_MESSAGE" value="rename db&#10;&#10;added adverage table" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/model.py">
@@ -396,22 +464,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/oct-stats.py">
+    <entry file="file://$PROJECT_DIR$/october_2017-stats-to-stats_db.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="34" column="28" lean-forward="true" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#1#16#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/oct-stats.py">
+    <entry file="file://$PROJECT_DIR$/october_2017-stats-to-stats_db.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1005">
           <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#1#16#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -427,27 +495,34 @@
     </entry>
     <entry file="das://cdbe9fe4-a9be-4da2-808d-2c98ea83862c/schema/main/table/team" />
     <entry file="das://969fcceb-3e6b-4d77-a4a8-57b172ea34ba/schema/main/table/team" />
-    <entry file="file://$PROJECT_DIR$/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="28" column="8" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+    <entry file="das://aaea55a9-6358-41f2-95d6-778ba92e9859/schema/main/table/team">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/object.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="68" lean-forward="true" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="68" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a9459190-6472-4988-80d9-033e8dea6577/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/aaea55a9-6358-41f2-95d6-778ba92e9859/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a9459190-6472-4988-80d9-033e8dea6577/console.sql">
+    <entry file="das://5fb46df3-f4d4-4856-8c52-d78ee5bbae2f/schema/main/table/team">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://5fb46df3-f4d4-4856-8c52-d78ee5bbae2f/schema/main/table/player">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/5fb46df3-f4d4-4856-8c52-d78ee5bbae2f/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="das://a9459190-6472-4988-80d9-033e8dea6577/schema/main/table/team">
@@ -457,17 +532,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/oct-stats.py">
+    <entry file="file://$PROJECT_DIR$/model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="97" column="45" lean-forward="true" selection-start-line="97" selection-start-column="45" selection-end-line="97" selection-end-column="45" />
+        <state relative-caret-position="495">
+          <caret line="34" column="75" selection-start-line="34" selection-start-column="75" selection-end-line="34" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/object.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="das://a9459190-6472-4988-80d9-033e8dea6577/schema/main/table/player">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/october_2017-stats-to-stats_db.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="103" column="20" selection-start-line="102" selection-start-column="8" selection-end-line="104" selection-end-column="24" />
+          <folding>
+            <element signature="e#1#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mean_stats-to-DB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://a9459190-6472-4988-80d9-033e8dea6577/schema/main/table/player_average">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />

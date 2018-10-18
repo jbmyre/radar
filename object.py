@@ -5,7 +5,7 @@ from sqlalchemy import create_engine
 # Create an engine and create all the tables we need
 engine = create_engine('sqlite:///stats.db', echo=True)
 model.metadata.bind = engine
-model.metadata.create_all()
+#model.metadata.create_all()
 
 # Set up the session
 sm = orm.sessionmaker(bind=engine, autoflush=True, autocommit=False,

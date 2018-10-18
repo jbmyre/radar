@@ -1,4 +1,3 @@
-import json
 import requests
 from object import session
 import model
