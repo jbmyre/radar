@@ -71,6 +71,61 @@ def game_stats(games, team_id):
 
 lakers_stats = game_stats(lakers_games, lakers_id)
 timberwolves_stats = game_stats(timberwolves_games, timberwolves_id)
-magic_stats = game_stats(magic_games,magic_id)
-p
+magic_stats = game_stats(magic_games, magic_id)
+pistons_stats = game_stats(pistons_games, pistons_id)
+heat_stats = game_stats(heat_games, heat_id)
+spurs_stats = game_stats(spurs_games, spurs_id)
+kings_stats = game_stats(kings_games, kings_id)
+raptors_stats = game_stats(raptors_games, raptors_id)
 
+
+def nested_get(input_dict, nested_key):
+    internal_dict_value = input_dict
+    for k in nested_key:
+        internal_dict_value = internal_dict_value.get(k, None)
+        if internal_dict_value is None:
+            return None
+    return internal_dict_value
+
+
+def write_player_stats(stats, team_id):
+    for p in stats:
+        stat = nested_get(p, ["statistics"])
+        player = model.Player()
+        player.player_id = p.get("id")
+        player.team_id = team_id
+        player.first_name = p.get("first_name")
+        player.last_name = p.get("last_name")
+        player.jersey_number = p.get("jersey_number")
+        player.points = stat.get("points")
+        player.rebounds = stat.get("rebounds")
+        player.assists = stat.get("assists")
+        player.fg_percent = stat.get("field_goals_pct")
+        session.add(player)
+        session.flush()
+        session.commit()
+
+
+for stat in lakers_stats:
+    write_player_stats(stat, lakers_id)
+
+for stat in timberwolves_stats:
+    write_player_stats(stat, timberwolves_id)
+
+for stat in magic_stats:
+    write_player_stats(stat, magic_id)
+
+for stat in pistons_stats:
+    write_player_stats(stat, pistons_id)
+
+for stat in heat_stats:
+    write_player_stats(stat, heat_id)
+
+for stat in spurs_stats:
+    write_player_stats(stat, spurs_id)
+
+for stat in kings_stats:
+    write_player_stats(stat, kings_id)
+
+for stat in raptors_stats:
+    write_player_stats(stat, raptors_id)
