@@ -24,6 +24,21 @@ player_table = schema.Table('player', metadata,
                             schema.Column('fg_percent', types.Integer),
                             )
 
+current_player_table = schema.Table('current_player', metadata,
+                            schema.Column('id', types.Integer, autoincrement=True, primary_key=True),
+                            schema.Column('player_id', types.Unicode(255)),
+                            schema.Column('team_id', types.Unicode(255),
+                                          schema.ForeignKey('team.id'), nullable=False),
+                            schema.Column('first_name', types.Unicode(255)),
+                            schema.Column('last_name', types.Unicode(255)),
+                            schema.Column('jersey_number', types.Unicode(255)),
+                            schema.Column('points', types.Unicode(255)),
+                            schema.Column('rebounds', types.Unicode(255)),
+                            schema.Column('assists', types.Unicode(255)),
+                            schema.Column('fg_percent', types.Unicode(255)),
+                            schema.Column('played', types.Unicode(255)),
+                            )
+
 average_player_table = schema.Table('player_average', metadata,
                                     schema.Column('id', types.Integer, autoincrement=True, primary_key=True),
                                     schema.Column('player_id', types.Unicode(255)),
@@ -36,6 +51,7 @@ average_player_table = schema.Table('player_average', metadata,
                                     schema.Column('rebounds', types.Integer),
                                     schema.Column('assists', types.Integer),
                                     schema.Column('fg_percent', types.Integer),
+                                    schema.Column('played', types.Integer),
                                     )
 
 
@@ -51,6 +67,10 @@ class AveragePlayer(object):
     pass
 
 
+class CurrentPlayer(object):
+    pass
+
+
 orm.mapper(Team, team_table, properties={
     'players': orm.relation(Player, backref='team')
 })
@@ -58,3 +78,5 @@ orm.mapper(Team, team_table, properties={
 orm.mapper(Player, player_table)
 
 orm.mapper(AveragePlayer, average_player_table)
+
+orm.mapper(CurrentPlayer, current_player_table)

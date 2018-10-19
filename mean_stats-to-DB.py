@@ -1,9 +1,8 @@
-import requests
 from object import session
 import model
 Player = model.Player
 
-player_q = session.query(Player).distinct(Player.player_id).group_by(Player.player_id)
+player_q = session.query(Player).distinct(Player.player_id).group_by(Player.player_id).all()
 
 all_players = []
 
@@ -17,11 +16,14 @@ def get_all_players_games(p_id):
     rebounds = []
     assists = []
     fg_percent = []
+    played = 0
     for game in games:
         points.append(game.points)
         rebounds.append(game.rebounds)
         assists.append(game.assists)
         fg_percent.append(game.fg_percent)
+        if game.points != 0 or game.points != 0 or game.assists != 0 or game.rebounds != 0 or game.fg_percent != 0:
+            played = played + 1
 
     adv = model.AveragePlayer()
     adv.first_name = games[0].first_name
@@ -33,6 +35,7 @@ def get_all_players_games(p_id):
     adv.rebounds = reduce(lambda x, y: x + y, rebounds) / len(rebounds)
     adv.assists = reduce(lambda x, y: x + y, assists) / len(assists)
     adv.fg_percent = reduce(lambda x, y: x + y, fg_percent) / len(fg_percent)
+    adv.played =played
     session.add(adv)
     session.flush()
     session.commit()
