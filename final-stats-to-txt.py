@@ -52,20 +52,25 @@ def write_txt(team1,team1_id, team2, team2_id):
 
         for player in home:
             home_line1 = "W\{:s}{:s}10\{:s}\{:s}\{:s}\{:s}\{:s}\{:s}\{:s}\October ({:s} Gms)\\".format(home_code, player.jersey_number, home_template1 ,player.jersey_number,player.first_name, player.last_name, str(player.points), str(player.rebounds), str(player.assists) , str(player.played)) + "\\"
-            home_line2 = "W\{:s}{:s}11\{:s}\{:s}\{:s}\{:s}\{:s}\{:s}\{:s}\October ({:s} Gms)\\".format(home_code, player.jersey_number, home_template2 ,player.jersey_number,player.first_name, player.last_name, str(player.points), str(player.rebounds), str(player.fg_percent), str(player.played)) + "\\"
             f.write(home_line1)
             f.write('\n')
-            f.write(home_line2)
-            f.write('\n')
+
 
         for player in away:
             away_line1 = "W\{:s}{:s}10\{:s}\{:s}\{:s}\{:s}\{:s}\{:s}\{:s}\October ({:s} Gms)\\".format(away_code, player.jersey_number, away_template1, player.jersey_number,player.first_name, player.last_name, str(player.points), str(player.rebounds), str(player.assists), str(player.played)) + "\\"
-            away_line2 = "W\{:s}{:s}11\{:s}\{:s}\{:s}\{:s}\{:s}\{:s}\{:s}\October ({:s} Gms)\\".format(away_code, player.jersey_number, away_template2, player.jersey_number,player.first_name, player.last_name, str(player.points), str(player.rebounds), str(player.fg_percent), str(player.played)) + "\\"
             f.write(away_line1)
             f.write('\n')
-            f.write(away_line2)
+
+        for player in home:
+            home_line2 = "W\{:s}{:s}11\{:s}\{:s}\{:s}\{:s}\{:s}\{:s}\{:s}\October ({:s} Gms)\\".format(home_code, player.jersey_number, home_template2 ,player.jersey_number,player.first_name, player.last_name, str(player.points), str(player.rebounds), str(player.fg_percent), str(player.played)) + "\\"
+            f.write(home_line2)
             f.write('\n')
 
+
+        for player in away:
+            away_line2 = "W\{:s}{:s}11\{:s}\{:s}\{:s}\{:s}\{:s}\{:s}\{:s}\October ({:s} Gms)\\".format(away_code, player.jersey_number, away_template2, player.jersey_number,player.first_name, player.last_name, str(player.points), str(player.rebounds), str(player.fg_percent), str(player.played)) + "\\"
+            f.write(away_line2)
+            f.write('\n')
 
 
 write_txt(magic_q,magic_id,pistons_q,pistons_id)
